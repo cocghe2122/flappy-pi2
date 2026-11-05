@@ -267,14 +267,13 @@ export function PiAuthProvider({ children }: { children: ReactNode }) {
 
       setIsAuthenticated(true);
       setHasError(false);
-    }     } catch (err: any) {
+    } catch (err: any) {
       console.error("❌ Chi tiết lỗi:", err);
       setHasError(true);
       const errorText = err instanceof Error ? err.message : String(err);
       setAuthMessage(`LỖI HỆ THỐNG: ${errorText}`);
-      setError(errorText);
-
-    }
+      setError(errorText)
+ }
   };
 
   useEffect(() => {
