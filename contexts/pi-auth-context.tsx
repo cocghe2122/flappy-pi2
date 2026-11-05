@@ -267,12 +267,13 @@ export function PiAuthProvider({ children }: { children: ReactNode }) {
 
       setIsAuthenticated(true);
       setHasError(false);
-    } catch (err) {
-      console.error("❌ Pi Network initialization failed:", err);
+    }     } catch (err: any) {
+      console.error("❌ Chi tiết lỗi:", err);
       setHasError(true);
-      const errorMessage = getErrorMessage(err);
-      setAuthMessage(errorMessage);
-      setError(errorMessage);
+      const errorText = err instanceof Error ? err.message : String(err);
+      setAuthMessage(`LỖI HỆ THỐNG: ${errorText}`);
+      setError(errorText);
+
     }
   };
 
