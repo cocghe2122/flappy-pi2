@@ -26,6 +26,7 @@ html {
   --font-mono: ${GeistMono.variable};
 }
         `}</style>
+      <script src="https://sdk.minepi.com/pi-sdk.js" async></script>
       </head>
       <body>
         <AppWrapper>{children}</AppWrapper>
