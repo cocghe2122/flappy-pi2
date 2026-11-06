@@ -194,12 +194,15 @@ export function PiAuthProvider({ children }: { children: ReactNode }) {
       endpoint = BACKEND_URLS.LOGIN;
       payload = { pi_auth_token: accessToken };
     }
-    setUserData({
-    id: "user-test-123",
-    username: "Player1",
-    credits_balance: 1000,
-    terms_accepted: true
-});
+    const mockLoginResponse = {
+        data: {
+            id: "user-test-123",
+            username: "Player1",
+            credits_balance: 1000,
+            terms_accepted: true
+        }
+    };
+setUserData({(mockLoginResponse.data);
 
     if (accessToken) {
       setPiAccessToken(accessToken);
