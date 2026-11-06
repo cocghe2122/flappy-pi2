@@ -203,8 +203,7 @@ export function PiAuthProvider({ children }: { children: ReactNode }) {
             terms_accepted: true
         }
     };
-
-    if (accessToken) {
+ if (accessToken) {
       setPiAccessToken(accessToken);
       setApiAuthToken(accessToken);
     }
