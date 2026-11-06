@@ -194,7 +194,7 @@ export function PiAuthProvider({ children }: { children: ReactNode }) {
       endpoint = BACKEND_URLS.LOGIN;
       payload = { pi_auth_token: accessToken };
     }
-    const mockLoginResponse = {
+           const mockLoginResponse = {
         data: {
             id: "user-test-123",
             username: "Player1",
@@ -202,14 +202,13 @@ export function PiAuthProvider({ children }: { children: ReactNode }) {
             terms_accepted: true
         }
     };
+    
+    setUserData(mockLoginResponse.data);
 
-      setUserData(mockLoginResponse.data); 
-      if (accessToken) {
-      setPiAccessToken(accessToken);
-      setApiAuthToken(accessToken);
+    if (accessToken) {
+        setPiAccessToken(accessToken);
+        setApiAuthToken(accessToken);
     }
-
-    setUserData(loginRes.data);
   };
 
   const getErrorMessage = (error: unknown): string => {
